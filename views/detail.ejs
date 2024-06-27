@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title><%= item.title %> - Shopii</title>
+</head>
+<body>
+<div class="flex flex-col ctn">
+    <h1 class="center"><%= item.title %></h1>
+    <img src=<%= item.image %> alt="" class="img">
+<div class="center"><%= item.description %></div>
+<div>
+    <a href="/admin/create-item">Add Item</a>
+</div>
+</div>
+</body>
+</html>

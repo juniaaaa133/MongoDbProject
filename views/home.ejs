@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1 class="center">Shopii</h1>
+<div class="center">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores iste aut, quia corrupti cumque, esse quas rerum repudiandae, minus tempora quod voluptas sint? Aliquam dicta placeat praesentium dolor molestiae vitae.
+</div>
+<div>
+    <a href="/admin/create-item">Add Item</a>
+</div>
+<h2 class="center">Items</h2>
+<% for(let item of items) { %>
+<a href="/item-detail/<%= item.id %>" class="item flex">
+    <img src="<%= item.image%>" alt="" class="img-mini">
+    <h3><%= item.title %></h3>
+    <p><%= item.description %> </p>
+    </a>
+<% } %>
+</body>
+</html>
