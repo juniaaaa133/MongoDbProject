@@ -6,6 +6,10 @@ const admin = require('./routes/admin')
 const item = require('./routes/item')
 const doc = require('./routes/documentation')
 const itemController = require('./controllers/itemController')
+const sequelize = require('./util/database')
+const Item = require('./modals/post')
+const User = require('./modals/user')
+
 const app = express();
 
 app.set('view engine','ejs')
@@ -19,7 +23,23 @@ app.use('/admin',admin);
 app.use(item)
 app.use('/developer',doc)
 
+Item.belongsTo(User,{constraints : true , onDelete : "CASCADE"});
+User.hasMany(Item);
 
-app.listen(8080,()=>{
-    console.log('Server running')
-});
+sequelize
+.sync()
+.then(()=>{
+  return User.findByPk(1)
+})
+.then((user) => {
+    if(!user) {
+      return User.create({
+            name : "Reinnn",
+            email : "rein@gmail.com"
+        })
+}
+      return user
+}
+)
+.then(()=> app.listen(8080))
+.catch((err) => console.log(err))

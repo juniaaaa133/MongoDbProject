@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/index.css">
-    <title><%= item.title %> - Shopii</title>
+    <title><%= post.title %> - Posty</title>
 </head>
 <body>
 <div class="flex flex-col ctn">
-    <h1 class="center"><%= item.title %></h1>
-    <img src=<%= item.image %> alt="" class="img">
-<div class="center"><%= item.description %></div>
-<div>
-    <a href="/admin/create-item">Add Item</a>
+    <h1 class="center"><%= post.title %></h1>
+    <img src=<%= post.image %> alt="" class="img">
+<div class="center"><%= post.description %></div>
+<div class="flex ">
+    <a href="/admin/create-item">Add Post</a>
+    <a href="/admin/item-detail/update/<%= post.id %>">Edit Post</a>
+    <form action="/item-detail/<%= post.id %>" method="post">
+    <button>Delete</button>
+    </form>
 </div>
 </div>
 </body>

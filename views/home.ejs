@@ -7,20 +7,20 @@
     <title><%= title %></title>
 </head>
 <body>
-    <h1 class="center">Shopii</h1>
+    <h1 class="center">Posty</h1>
 <div class="center">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores iste aut, quia corrupti cumque, esse quas rerum repudiandae, minus tempora quod voluptas sint? Aliquam dicta placeat praesentium dolor molestiae vitae.
 </div>
 <div>
-    <a href="/admin/create-item">Add Item</a>
+    <a href="/admin/create-item">Add Post</a>
 </div>
-<h2 class="center">Items</h2>
-<% for(let item of items) { %>
-<a href="/item-detail/<%= item.id %>" class="item flex">
-    <img src="<%= item.image%>" alt="" class="img-mini">
-    <h3><%= item.title %></h3>
-    <p><%= item.description %> </p>
-    </a>
-<% } %>
+<h2 class="center">Posts</h2>
+<% for(let post of posts) { %>
+    <a href="/item-detail/<%= post.id %>" class="item flex">
+        <img src="<%= post.image%>" alt="" class="img-mini">
+        <h3><%= post.title %></h3>
+        <p><%= post.description %> </p>
+        </a>
+    <% } %>
 </body>
 </html>
