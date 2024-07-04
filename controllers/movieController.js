@@ -1,24 +1,16 @@
 const Movie = require("../models/movies");
-const User = require("../models/user");
 
 exports.createMovie = (req,res) => {
     let {name,description,poster,backdrop,rating,genre} = req.body;
-   return Movie.create({
+    Movie.create({
         name,
         description,
         poster,
         rating,
         genre,
         backdrop,
-        user : req.user
     })
-    .then((movie) => {
-        User
-        .findById(req.user._id)
-        .then((user) => {
-            user.movies.push(movie)
-            user.save();
-        })
+    .then(() => {
         console.log("Created Successfully!")
         res.redirect('/');
     })
