@@ -2,7 +2,7 @@ const Movie = require("../models/movies")
 
 exports.renderApiHomePage = (req,res) => {
    Movie
-   .find()
+   .getAll()
    .then((movies) => {
     res.render('home',{movies})
    })
@@ -16,7 +16,7 @@ exports.renderCreatePage = (req,res) => {
 exports.renderApiDetailPage = (req,res) => {
     const id = req.params.id;
     Movie
-    .findById(id)
+    .get(id)
     .then((movie) => {
         res.render('detail',{movie});
     })
@@ -26,7 +26,7 @@ exports.renderApiDetailPage = (req,res) => {
 exports.renderApiUpdatePage = (req,res) => {
     const id = req.params.id;
     Movie
-    .findById(id)
+    .get(id)
     .then((movie) => {
         res.render('update',{movie})
     })
