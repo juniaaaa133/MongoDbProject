@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>Update <%= movie.name %></title>
+</head>
+<body>
+    <h1>Edit movie : <%= movie.name%></h1>
+    <form method="post" class="form-ctn">
+        <input type="text" name="_id" hidden value="<%= movie._id%>">
+        <div class="flex flex-col">
+            <label for="name">Enter name</label>
+            <input type="text" value="<%= movie.name%>" id="name" name="name" class="inp">
+        </div>
+        <div class="flex flex-col">
+            <label for="description">Enter description</label>
+            <input type="text" value="<%= movie.description%>" id="description" name="description" class="inp">
+        </div>
+        <div class="flex flex-col">
+            <label for="rating">Enter Rating</label>
+            <input type="text" id="rating" value="<%= movie.rating%>" name="rating" class="inp">
+        </div>
+        <div class="flex flex-col">
+            <label for="genre">Enter genre</label>
+            <input type="text" id="genre" value="<%= movie.genre%>" name="genre" class="inp">
+        </div>
+        <div class="flex flex-col">
+            <label for="poster">Enter Poster Image</label>
+            <input type="text" id="poster" value="<%= movie.poster %>" name="poster" class="inp">
+        </div>
+        <div class="flex flex-col">
+            <label for="backdrop">Enter Backdrop Image</label>
+            <input type="text" id="backdrop" value="<%= movie.backdrop %>" name="backdrop" class="inp">
+        </div>
+        <button class="btn">Update</button>
+    </form>
+</body>
+</html>

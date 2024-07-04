@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= movie.name %> - MovieGrave</title>
     <link rel="stylesheet" href="/index.css">
-    <title><%= post.title %> - Posty</title>
 </head>
 <body>
-<div class="flex flex-col ctn">
-    <h1 class="center"><%= post.title %></h1>
-    <img src=<%= post.image %> alt="" class="img">
-<div class="center"><%= post.description %></div>
-<div class="flex ">
-    <a href="/admin/create-item">Add Post</a>
-    <a href="/admin/item-detail/update/<%= post.id %>">Edit Post</a>
-    <form action="/item-detail/<%= post.id %>" method="post">
-    <button>Delete</button>
-    </form>
-</div>
-</div>
+    <div class="flex flex-col">
+        <img class="img-bg" src="<%= movie.backdrop %>" alt="">
+
+        <div class="flex bar">
+            <a href="/edit-movie/<%= movie._id%>">Update Movie</a>
+            <form method="POST" action="/movies/<%= movie._id%>">
+                <button>Delete Movie</button>
+            </form>
+        </div>
+        <h1 class="flex"><%= movie.name %></h1>
+        <img class="img" src="<%= movie.poster %>" alt="">
+        <p><%= movie.rating%></p>
+        <h4><%= movie.genre%></h4>
+    </div>
 </body>
 </html>
